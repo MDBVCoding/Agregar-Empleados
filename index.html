@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Agregar Empleados</title>
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="styles.css">
+
+	<script>
+		function agregar(nombre, apellido, cedula, sueldo, depa, lugar){
+        	if (!nombre || !apellido || !cedula || !sueldo || !depa || !lugar) {
+        		alert("Hay campos vacios")
+        	} else {
+        		var parametros = {
+                	"nombre" : nombre,
+                	"apellido" : apellido,
+                	"cedula" : cedula,
+                	"sueldo" : sueldo,
+                	"depa" : depa,
+                	"lugar" : lugar
+       		 	};
+        		$.ajax({
+                	data:  parametros,
+                	url:   'agregar.php',
+                	type:  'post',
+                	beforeSend: function () {
+                        	$("#resultado").html("Procesando, espere por favor...");
+                	},
+                	success:  function (response) {
+                        	$("#resultado").html(response);
+                	}
+        		});
+        	}
+		}
+
+		function agregardos(nombre, apellido, cedula, sueldo, depa, lugar){
+        	if (!nombre || !apellido || !cedula || !sueldo || !depa || !lugar) {
+        		alert("Hay campos vacios")
+        	} else {
+        		var parametros = {
+                	"nombre" : nombre,
+                	"apellido" : apellido,
+                	"cedula" : cedula,
+                	"sueldo" : sueldo,
+                	"depa" : depa,
+                	"lugar" : lugar
+       		 	};
+        		$.ajax({
+                	data:  parametros,
+                	url:   'agregar.php',
+                	type:  'post',
+                	beforeSend: function () {
+                        	$("#resultado2").html("Procesando, espere por favor...");
+                	},
+                	success:  function (response) {
+                        	$("#resultado2").html(response);
+                	}
+        		});
+        	}
+		}
+
+		function agregartres(nombre, apellido, cedula, sueldo, depa, lugar){
+        	if (!nombre || !apellido || !cedula || !sueldo || !depa || !lugar) {
+        		alert("Hay campos vacios")
+        	} else {
+        		var parametros = {
+                	"nombre" : nombre,
+                	"apellido" : apellido,
+                	"cedula" : cedula,
+                	"sueldo" : sueldo,
+                	"depa" : depa,
+                	"lugar" : lugar
+       		 	};
+        		$.ajax({
+                	data:  parametros,
+                	url:   'agregar.php',
+                	type:  'post',
+                	beforeSend: function () {
+                        	$("#resultado3").html("Procesando, espere por favor...");
+                	},
+                	success:  function (response) {
+                        	$("#resultado3").html(response);
+                	}
+        		});
+        	}
+		}
+	</script>
+</head>
+<body container col-md-6>
+	<div id="divEmpleado1" class="container">
+		<h3>Ingresar Información de empleado</h3>
+			<label>Nombre</label><input class="form-control" type="text" name="nombre1" id="nombre1" required /></br>
+			<label>Apellido</label><input class="form-control" type="text" name="apellido1" id="apellido1" required /></br>
+			<label>Cedula</label><input class="form-control" type="number" name="cedula1" id="cedula1" required /></br>
+			<label>Sueldo</label><input class="form-control" type="number" name="sueldo1" id="sueldo1" required /></br>
+			<label>Departamento</label><input class="form-control" type="text" name="depa1" id="depa1" required /></br>
+			<label>Lugar de Trabajo</label><input class="form-control" type="text" name="lugar1" id="lugar1" required /></br>
+			<input class="btn btn-success btn-block" type="submit" onclick="agregar($('#nombre1').val(), $('#apellido1').val(), $('#cedula1').val(), $('#sueldo1').val(), $('#depa1').val(), $('#lugar1').val() );return false;" value="agregar" />
+	</div>
+	<div id="divEmpleado2" class="container">
+		<h3>Ingresar Información de empleado</h3>
+			<label>Nombre</label><input class="form-control" type="text" name="nombre2" id="nombre2" required></br>
+			<label>Apellido</label><input class="form-control" type="text" name="apellido2" id="apellido2" required></br>
+			<label>Cedula</label><input class="form-control" type="number" name="cedula2" id="cedula2" required></br>
+			<label>Sueldo</label><input class="form-control" type="number" name="sueldo2" id="sueldo2" required></br>
+			<label>Departamento</label><input class="form-control" type="text" name="depa2" id="depa2" required></br>
+			<label>Lugar de Trabajo</label><input class="form-control" type="text" name="lugar2" id="lugar2" required></br>
+			<input class="btn btn-success btn-block" type="button" onclick="agregardos($('#nombre2').val(), $('#apellido2').val(), $('#cedula2').val(), $('#sueldo2').val(), $('#depa2').val(), $('#lugar2').val() );return false;" value="agregar" >
+	</div>
+	<div id="divEmpleado3" class="container">
+		<h3>Ingresar Información de empleado</h3>
+			<label>Nombre</label><input class="form-control" type="text" name="nombre3" id="nombre3" required></br>
+			<label>Apellido</label><input class="form-control" type="text" name="apellido3" id="apellido3" required></br>
+			<label>Cedula</label><input class="form-control" type="number" name="cedula3" id="cedula3" required></br>
+			<label>Sueldo</label><input class="form-control" type="number" name="sueldo3" id="sueldo3" required></br>
+			<label>Departamento</label><input class="form-control" type="text" name="depa3" id="depa3" required></br>
+			<label>Lugar de Trabajo</label><input class="form-control" type="text" name="lugar3" id="lugar3" required></br>
+			<input class="btn btn-success btn-block" type="button" onclick="agregartres($('#nombre3').val(), $('#apellido3').val(), $('#cedula3').val(), $('#sueldo3').val(), $('#depa3').val(), $('#lugar3').val() );return false;" value="agregar" >
+	</div>
+	<div id="divresultados" class="container text-center">
+		<h3>Lista de empleados</h3>
+		<div id="resultado">
+			
+		</div>
+		<div id="resultado2">
+			
+		</div>
+		<div id="resultado3">
+			
+		</div>
+	</div>
+</body>
+</html>
